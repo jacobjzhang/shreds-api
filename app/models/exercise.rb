@@ -1,4 +1,8 @@
-class Exercise < ApplicationRecord
+module Exercise
+  def self.table_name_prefix
+    'exercise_'
+  end
 
-  validates_presence_of :name, :difficulty
+  has_many :schemes
+  has_many :workouts, :through => :schemes
 end
