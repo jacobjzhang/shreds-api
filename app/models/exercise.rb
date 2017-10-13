@@ -3,6 +3,13 @@ module Exercise
     'exercise_'
   end
 
-  has_many :schemes
-  has_many :workouts, :through => :schemes
+  def relate
+    has_many :schemes
+    has_many :workouts, :through => :schemes
+  end
+
+  def self.included(base)
+    base.relate
+  end
+
 end
