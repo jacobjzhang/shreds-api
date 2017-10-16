@@ -1,4 +1,6 @@
 class ExercisesController < ApplicationController
+  include Response
+
   before_action :set_exercise, only: [:show, :update, :destroy]
 
   # GET /exercises

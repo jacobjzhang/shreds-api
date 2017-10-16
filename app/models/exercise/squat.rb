@@ -1,2 +1,2 @@
-class Exercise::Squat < ApplicationRecord
+class Squat < Exercise
 end

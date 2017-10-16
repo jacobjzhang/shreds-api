@@ -1,2 +1,2 @@
-class Exercise::BenchPress < ApplicationRecord
+class BenchPress < Exercise
 end
