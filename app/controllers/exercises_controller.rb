@@ -11,8 +11,12 @@ class ExercisesController < ApplicationController
 
   # POST /exercises
   def create
-    binding.pry
     @exercise = Exercise.create!(exercise_params)
+
+    set_rep = exercise_params[:scheme]
+    if set_rep && Scheme.where(set_rep)?  
+      Scheme.create!(set_rep)
+
     json_response(@exercise, :created)
   end
 
@@ -37,7 +41,7 @@ class ExercisesController < ApplicationController
 
   def exercise_params
     # whitelist params
-    params.permit(:name, :type, :description)
+    params.permit(:name, :type, :description, :scheme)
   end
 
   def set_exercise
