@@ -1,5 +1,4 @@
 class Exercise < ApplicationRecord
-  has_many :schemes
-  has_many :workouts, :through => :schemes
+  belongs_to_and_has_many :schemes
 
 end

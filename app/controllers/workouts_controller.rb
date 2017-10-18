@@ -13,7 +13,7 @@ class WorkoutsController < ApplicationController
 
   private
 
-  def worout_params
+  def workout_params
     params.permit(:title)
   end
 
